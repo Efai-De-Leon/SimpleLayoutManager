@@ -22,7 +22,7 @@ class TestPrompterLayout(unittest.TestCase):
         self.layout.align_rows_content()
 
     def test_build_rows(self):
-        self.assertEqual(1, len(self.layout.rows))  # Expect 1 row based on content
+        self.assertEqual(1, len(self.layout.rows))
 
     def test_set_row_positions(self):
         self.assertEqual(self.layout.rows[0].position.y, 25.0)
@@ -35,8 +35,7 @@ class TestPrompterLayout(unittest.TestCase):
         self.assertAlmostEqual(self.layout.rows[0].position.z, expected_position.z, places=6)
 
     def test_align_content(self):
-        # Expected positions after alignment
-        expected_position1 = Position(-5.5, 25, 0)  # Centered based on total width
+        expected_position1 = Position(-5.5, 25, 0)  
         expected_position2 = Position(-1.5, 25.0, 0.0)
         self.assertAlmostEqual(self.layout.rows[0].elements[0].position.x, expected_position1.x, places=6)
         self.assertAlmostEqual(self.layout.rows[0].elements[0].position.y, expected_position1.y, places=6)
@@ -47,6 +46,5 @@ class TestPrompterLayout(unittest.TestCase):
         self.assertAlmostEqual(self.layout.rows[0].elements[1].position.z, expected_position2.z, places=6)
 
 
-# Run the tests
 if __name__ == '__main__':
     unittest.main()
